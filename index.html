@@ -91,7 +91,7 @@
       const city = document.getElementById("t1").value.trim();
 
       if (city !== "") {
-        fetch("http://api.weatherstack.com/current?access_key=fec0aac2b3416663764e6d734ece457f&query=" + city)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e083abca82d641cf9c30c58b96efeb5d&units=metric`)
           .then(response => response.json())
           .then(data => {
             if (data.success === false || !data.current) {
